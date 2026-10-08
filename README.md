@@ -3,6 +3,8 @@
 > 企业 Agent · 合同工作台 · 招投标与合同交叉校验 · 文档比对
 > 本仓库收录可运行的产物与套件源码；**演示数据全部为合成或脱敏内容**，不含客户名称与客户合同原文。
 
+**🌐 在线浏览**：<https://liuranfeng.github.io/ai-contract-portfolio/> —— 首页与三张演示页可直接在浏览器打开，无需下载。
+
 ## 目录索引
 
 | # | 内容 | 形态 | 入口 |
@@ -14,7 +16,7 @@
 | 05 | 文档比对套件 | 源码（7 个 Skill） | [`suites/document-compare/`](suites/document-compare/) |
 | 06 | 索引说明与脱敏口径 | 文档 | [`docs/`](docs/) |
 
-在线首页：打开 [`index.html`](index.html)（GitHub Pages 可直接发布该文件）。
+在线首页：<https://liuranfeng.github.io/ai-contract-portfolio/>（GitHub Pages，源为 `main` / `/ (root)`）
 
 ## 三条主线
 
