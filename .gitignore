@@ -1,0 +1,31 @@
+# 运行产物与本地环境
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+
+# 工程与报告产物
+*.log
+*.tmp
+*.bak
+output/
+outputs/
+dist/
+build/
+*.pdf
+*.docx
+*.doc
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 凭据（绝不上库）
+.env
+*.key
+*credentials*.json
+*api-key*.json

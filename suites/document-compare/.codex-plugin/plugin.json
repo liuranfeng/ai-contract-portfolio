@@ -1,0 +1,18 @@
+{
+  "name": "document-compare-plugin",
+  "version": "1.1.0",
+  "description": "按阅读顺序逐布局对比两个解析文档，区分字符与语义，生成修订、HTML和报告。",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "文档比对",
+    "shortDescription": "两文档逐layout字符/语义比对与修订输出",
+    "longDescription": "复用解析技能，按阅读顺序对齐原件和比对件，输出Word修订、三栏HTML或独立PDF/Word报告。",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "比较两份文档，区分字符和语义变化，并选择需要的输出格式。"
+  }
+}

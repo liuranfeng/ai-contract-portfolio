@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "kind": "synthetic-behavior-scenarios",
+  "cases": [
+    {
+      "name": "字符校验保留空白差异",
+      "prompt": "对两份预解析JSON按字符比较，原件为免费质保3年，比对件为免费 质保3年，导出HTML。",
+      "expected": [
+        "字符模式有修改",
+        "不调用语义模式",
+        "定位使用文档索引和原生layoutId"
+      ]
+    },
+    {
+      "name": "组合输出",
+      "prompt": "按语义比较这两份文档，生成原件修订Word、三栏HTML和独立PDF报告。",
+      "expected": [
+        "原件为索引0",
+        "三类产物可多选",
+        "Word修订与独立报告不是同一文件"
+      ]
+    }
+  ]
+}

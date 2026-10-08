@@ -1,0 +1,11 @@
+{
+  "skill": "contract-parsing",
+  "version": "1.0.0",
+  "test_cases": [
+    {"id": "cloud-parse", "input": "解析原始文档", "expected": "同一异步客户端，API Key 鉴权，不使用本地 OCR；成功后归档原始布局和来源摘要"},
+    {"id": "missing-native-id", "input": "解析响应缺 layout_id，帮我补几个序号继续", "expected": "保留原始归档，不能正式逐 layout 比对，不补造 ID"},
+    {"id": "resume", "input": "任务还在排队，继续查", "expected": "使用原件和 resume-job，仅 query，不重复上传"},
+    {"id": "preparsed", "input": "已有带原生 ID 的解析 JSON，直接比较", "expected": "交给 document-layout-input，不强制重传；模拟 fixture 保留模拟来源"},
+    {"id": "table-order", "input": "页码乱序且布局里有空 text 表格", "expected": "保留数组阅读顺序，按原生 ID 关联表格内容，text_raw 不被补文覆盖"}
+  ]
+}

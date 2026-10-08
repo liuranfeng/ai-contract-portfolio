@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0",
+  "skillVersion": "1.0.0",
+  "source": {
+    "plugin": "contract-review-plugin",
+    "skill": "contract-parsing",
+    "version": "2.5.0"
+  },
+  "targetPlugin": "document-compare-plugin",
+  "scope": [
+    "skills/contract-parsing",
+    "skills/document-layout-input"
+  ],
+  "modifications": [
+    "Remove fabricated layout IDs and validate native IDs across all pages, preserving ID types.",
+    "Preserve original layout text before table enrichment and preserve parser arrays.",
+    "Archive sanitized service JSON and its SHA-256 with source SHA-256 and parse run ID.",
+    "Validate archive integrity and accept integer zero IDs while rejecting duplicates on blank layouts.",
+    "Keep asynchronous task/query resume, API Key environment/file authentication, and no-local-OCR behavior.",
+    "Remove knowledge initialization dependency, adapt DuMate metadata to 1.0.0, and document direct parsed JSON import.",
+    "Adapt existing offline transport and CLI tests and add native layout and archive checks."
+  ],
+  "verification": {
+    "command": "python -B -X utf8 -m unittest discover -s skills/contract-parsing/tests",
+    "testsPassed": 29,
+    "liveNetworkUsed": false,
+    "credentialFixtures": "synthetic only"
+  },
+  "hashConvention": "SHA-256 over file bytes. This manifest excludes its own hash to avoid self-reference.",
+  "files": [
+    {
+      "path": "skills/contract-parsing/assets/icon.png",
+      "sha256": "b6c52fe34e2ca0e7a048d4320e8ec9671fe66c62afc3aa231e36562228761eac",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/assets/icon.png",
+      "sourceSha256": "b6c52fe34e2ca0e7a048d4320e8ec9671fe66c62afc3aa231e36562228761eac",
+      "change": "unchanged_copy"
+    },
+    {
+      "path": "skills/contract-parsing/references/baidu-document-parser-runtime.json",
+      "sha256": "1e50659180bcf05366a0db45abbc0c813aff3d216662dcfb1d0098342a080bf8",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/references/baidu-document-parser-runtime.json",
+      "sourceSha256": "d2bc448b2f3197679af066fec722683a2e716425cb06c741e32d8087985a207e",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/references/output-schema.md",
+      "sha256": "e25af3d83147ca9015438de6774712ec07d4c9ea7b00b5190e5fdd5a88a2fcf3",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/references/output-schema.md",
+      "sourceSha256": "e0ca04b7ad8740f344163f53c4872201f5537f3ead6cd5ec3a3bab6736a3bfdf",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/scripts/document_parse_skill.py",
+      "sha256": "0e9663f32803cadcdfbf741a4c3c34f6611e1fa693dccd32c5c87bc8f76b51ea",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/scripts/document_parse_skill.py",
+      "sourceSha256": "2f8ee4e1671f76bcf4d231b641b32750c09db406f0ea212cf3dbce0e3c7d4459",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/scripts/parse_gate_check.py",
+      "sha256": "3107e45b6ffd84fb55d9bd9170fa85f58f35ec7dc7a3bfcad840b984854fbf30",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/scripts/parse_gate_check.py",
+      "sourceSha256": "f898ef1df60b14e190c79ae629a1b0390f353f9ee207b30c983f658d90429b74",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/SKILL.md",
+      "sha256": "1d8c6ca3ea1d9f039bccf926530e35f56f3f3439a65d2dd2253b75bca19cb2cd",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/SKILL.md",
+      "sourceSha256": "7e53295aac852ce237b6a4ff07ad32ec58d06d0fd35f4a4d3010e7b1601c95f0",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/tests/cases.json",
+      "sha256": "e85dc5566101eb807200d4ffbd90ea1ed5b7ee48449d11b8c9f45789d1eb8fd2",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/tests/cases.json",
+      "sourceSha256": "c87e8e9c174d81b848b39bab6105c822754735cc32c8c480bc72e315df283081",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/tests/README.md",
+      "sha256": "4158c9a9555f18810aadbcbfe7690c001c3e21ac61a54111eb47896aaf734ad8",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "change": "new"
+    },
+    {
+      "path": "skills/contract-parsing/tests/test_baidu_async_parser.py",
+      "sha256": "007aa1ee9c25c862c674dbbd78a05715e86527533bd4465b141938e117abf200",
+      "sourcePath": "contract-review-plugin/tests/test_baidu_async_parser.py",
+      "sourceSha256": "954a51b30434601fb1507f5e3a0450413023fb2aaa159e67b7730d3d5ac5d578",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/tests/test_document_parse_skill.py",
+      "sha256": "0f21cbef191f487d6ab6e3701bad9c9a73e22690de3bffdd661d50f9e6846536",
+      "sourcePath": "contract-review-plugin/tests/test_document_parse_skill.py",
+      "sourceSha256": "2dd5abbcfceee65f50de67445795ce2ea4932c21116ae6a1d6214760233da4b5",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/contract-parsing/tests/test_native_layouts.py",
+      "sha256": "38c03caaa5519538c1a3d26b01600f9d79c35839ef0d4233f7eeda2f76e2bb06",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "change": "new"
+    },
+    {
+      "path": "skills/contract-parsing/tests/test_parse_gate_check.py",
+      "sha256": "5fb8daca2537a8b3997eae47add722bc9684fd832b77e3e523da997aa34de8ed",
+      "sourcePath": "contract-review-plugin/tests/test_parse_gate_check.py",
+      "sourceSha256": "48fc6f117ec7059847050f0a196b6b74f4affbb8b78dceca79e4e93fe6f625c1",
+      "change": "adapted"
+    },
+    {
+      "path": "skills/document-layout-input/assets/icon.png",
+      "sha256": "b6c52fe34e2ca0e7a048d4320e8ec9671fe66c62afc3aa231e36562228761eac",
+      "sourcePath": "contract-review-plugin/skills/contract-parsing/assets/icon.png",
+      "sourceSha256": "b6c52fe34e2ca0e7a048d4320e8ec9671fe66c62afc3aa231e36562228761eac",
+      "change": "unchanged_copy"
+    },
+    {
+      "path": "skills/document-layout-input/SKILL.md",
+      "sha256": "6aa467236a8299a48fae37ed2d0f1132771dd1075e7c22d222dbd7947355327d",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "change": "new"
+    }
+  ]
+}

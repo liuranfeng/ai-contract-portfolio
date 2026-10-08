@@ -1,0 +1,32 @@
+{
+  "code": "baidu-document-parser",
+  "tool": "document_parse",
+  "version": "1.0.0",
+  "upstreamVersion": "2.5.0",
+  "authentication": "bearer_api_key",
+  "apiKeyUrl": "https://console.bce.baidu.com/qianfan/ais/console/apiKey",
+  "apiKeyEnvironment": "QIANFAN_API_KEY",
+  "apiKeyFileEnvironment": "QIANFAN_API_KEY_FILE",
+  "defaultEngine": "base",
+  "engines": {
+    "base": {
+      "status": "implemented_pending_live_verification",
+      "submitUrl": "https://aip.baidubce.com/rest/2.0/brain/online/v2/paddle-vl-parser/task",
+      "queryUrl": "https://aip.baidubce.com/rest/2.0/brain/online/v2/paddle-vl-parser/task/query",
+      "documentation": "https://ai.baidu.com/ai-doc/OCR/3mi73at9o"
+    },
+    "pipeline": {
+      "status": "awaiting_user_endpoint_confirmation",
+      "enabled": false
+    }
+  },
+  "authDocumentation": "https://ai.baidu.com/ai-doc/REFERENCE/Rm64sd6cb",
+  "parser": "baidu-document-parser/paddle-vl",
+  "localFallback": false,
+  "pollSeconds": 5,
+  "maxPollsPerRun": 120,
+  "upstreamCredentialsInPlugin": false,
+  "acceptedFileTypes": ["pdf", "jpg", "jpeg", "png", "bmp", "tif", "tiff", "ofd", "doc", "docx", "txt", "wps", "ppt", "pptx"],
+  "imageUploadLimitMiB": 10,
+  "documentUploadLimitMiB": 50
+}

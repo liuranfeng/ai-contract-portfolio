@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "kind": "synthetic-behavior-scenarios",
+  "cases": [
+    {
+      "name": "独立报告",
+      "prompt": "将已有语义比对结果导出独立PDF和Word报告。",
+      "expected": [
+        "不改变语义判定",
+        "未决事项保留",
+        "包含原文证据引用",
+        "与修订Word分开"
+      ]
+    },
+    {
+      "name": "不伪造完成",
+      "prompt": "仍有pending/uncertain事项，请先输出报告。",
+      "expected": [
+        "明确待复核",
+        "不宣称全文一致",
+        "不删除未决差异"
+      ]
+    }
+  ]
+}

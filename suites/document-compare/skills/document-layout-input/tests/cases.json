@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "kind": "synthetic-behavior-scenarios",
+  "cases": [
+    {
+      "name": "已有结果复用",
+      "prompt": "这里有两份已经解析的pages/layouts JSON，不需要重新解析。",
+      "expected": [
+        "直接导入",
+        "不上传、不重复计费",
+        "保存来源与阅读顺序"
+      ]
+    },
+    {
+      "name": "原生ID缺失",
+      "prompt": "解析布局缺layoutId，请帮我补一个继续比。",
+      "expected": [
+        "不补造原生ID",
+        "说明缺原始布局定位",
+        "不冒充正式比对完成"
+      ]
+    }
+  ]
+}

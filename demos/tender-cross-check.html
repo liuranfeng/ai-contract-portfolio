@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>招投标文件 × 合同交叉校验 · 合成文本样例</title>
+<link rel="stylesheet" href="../assets/portfolio.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="brand">招投标 × 合同交叉校验</span>
+    <nav>
+      <a href="../index.html">← 返回作品集</a>
+      <a href="workbench-v5.html">工作台</a>
+      <a href="doc-compare.html">文档比对</a>
+    </nav>
+  </div>
+
+  <section class="sheet">
+    <div class="kicker">Tender × contract · Non-substitution check</div>
+    <h1>招投标文件与合同交叉校验</h1>
+    <p class="headline">核查「投标承诺是否最终落到合同」的非置换式校验</p>
+    <p class="lead">
+      这类问题的典型形态是：招标提出要求、投标作出承诺，<strong>但最终合同没有落实</strong>。
+      校验不做条款替换式比对，而是先建立<span class="hl">原文证据层</span>——
+      以解析返回的 layoutId 与文档索引定位每一段原文，让每条结论都能指回具体出处。
+    </p>
+    <div class="chips">
+      <span class="chip on">合成文本</span>
+      <span class="chip">layoutId 唯一定位</span>
+      <span class="chip">文档索引防重排</span>
+      <span class="chip">事实冲突清单</span>
+      <span class="chip">HTML / PDF 报告</span>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <h2>顶部：事实冲突清单</h2>
+    <table class="plain">
+      <thead><tr><th style="width:22%">事项</th><th style="width:30%">招标 / 投标表述</th><th style="width:30%">合同表述</th><th>判定</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>质保期</strong></td>
+          <td>投标承诺整机质保 <strong>24 个月</strong>（T-02 · 第 12 页）</td>
+          <td>合同约定质保期 <strong>12 个月</strong>（C-01 · 第 7 页）</td>
+          <td><span class="badge stop">冲突</span> 承诺未落实</td>
+        </tr>
+        <tr>
+          <td><strong>备件供应</strong></td>
+          <td>投标承诺投产后 10 年内提供备件（T-02 · 第 19 页）</td>
+          <td>合同仅约定「按需协商」（C-01 · 第 11 页）</td>
+          <td><span class="badge stop">冲突</span> 承诺弱化</td>
+        </tr>
+        <tr>
+          <td><strong>培训</strong></td>
+          <td>招标要求现场培训不少于 5 人日（T-01 · 第 6 页）</td>
+          <td>合同约定现场培训 5 人日（C-01 · 第 9 页）</td>
+          <td><span class="badge ok">一致</span> 已落实</td>
+        </tr>
+        <tr>
+          <td><strong>性能考核</strong></td>
+          <td>投标承诺提供性能考核方案（T-02 · 第 22 页）</td>
+          <td>合同附件未包含考核方案（C-02 附件清单）</td>
+          <td><span class="badge warn">缺失</span> 需补充</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sheet">
+    <h2>原文证据层：每条结论可回溯</h2>
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>投标文件（T-02）<span class="badge info">第 12 页</span></h3>
+        <div class="doc">
+          <p><span class="ln">layout-118</span>我方承诺：本合同项下所供<strong>整机质保期为 24 个月</strong>，自最终验收合格之日起计算。</p>
+          <p><span class="ln">layout-119</span>质保期内因产品质量问题导致的维修、更换及往返运输费用均由我方承担。</p>
+          <p><span class="ln">layout-263</span>备件供应：投产后 <strong>10 年内</strong>保证关键备件供应，价格不高于同期市场价。</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>合同正文（C-01）<span class="badge info">第 7 页</span></h3>
+        <div class="doc">
+          <p><span class="ln">layout-041</span>第九条 质量保证：卖方保证货物质量符合约定标准，<span class="hit conflict">质保期为 12 个月</span>，自验收合格之日起算。</p>
+          <p><span class="ln">layout-052</span>第十二条 备件：质保期届满后，备件供应由双方<span class="hit conflict">按需另行协商</span>。</p>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>为什么用 layoutId</b>　解析结果按阅读顺序返回 layout 块并带唯一 ID；但<strong>跨文档时 layoutId 会重排</strong>，因此定位必须同时携带文档索引（T-02 / C-01），否则结论会指回错误原文。</div>
+  </section>
+
+  <section class="sheet">
+    <h2>报告交付</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>报告形态</h3><p>文档 + 关系连线 + 顶部事实冲突清单：先给结论，再给原文出处，不使用工作台式排布。</p></div>
+      <div class="card"><h3>长文档处理</h3><p>超长文档按段拆分渲染，拆分后统一样式与页码，导出时保持可打印。</p></div>
+      <div class="card"><h3>导出</h3><p>HTML 与 PDF 双形态；导出脚本与 PDF 校验脚本包含在套件内（见 suites 目录）。</p></div>
+    </div>
+    <div class="note"><b>成果状态</b>　该能力已在两组真实文件上完成<strong>离线验证</strong>（长文档分别约 109 页与 330 页），并完成 PDF 导出；<strong>未接入客户生产环境</strong>。本页为合成文本的示意样例。</div>
+    <div class="footer">
+      <span>合同 AI 产品作品集 · 交叉校验</span>
+      <span class="mark">DEMO / 02</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

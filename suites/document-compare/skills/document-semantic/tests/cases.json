@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "kind": "synthetic-behavior-scenarios",
+  "cases": [
+    {
+      "name": "等义改写",
+      "prompt": "原件每月支付一次，比对件按月支付，请判断语义。",
+      "expected": [
+        "保留字符修改",
+        "逐项核对主体条件范围",
+        "有证据理由才标equivalent"
+      ]
+    },
+    {
+      "name": "期限变化",
+      "prompt": "原件2小时内到场，比对件市区1小时内到场。",
+      "expected": [
+        "同时核对期限和范围",
+        "不能只判断数字变好",
+        "不完整上下文保留uncertain"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>刘冉丰 · 合同 AI 产品作品集</title>
+<link rel="stylesheet" href="assets/portfolio.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="brand">AI 合同产品作品集</span>
+    <nav>
+      <a href="#demos">场景演示</a>
+      <a href="#suites">套件代码</a>
+      <a href="#docs">索引说明</a>
+      <a href="#scope">数据与脱敏</a>
+    </nav>
+  </div>
+
+  <section class="sheet">
+    <div class="kicker">Contract AI · Agent Workbench · Evidence</div>
+    <h1>刘冉丰｜合同 AI 产品作品集</h1>
+    <p class="headline">企业 Agent · 合同工作台 · 招投标与合同交叉校验 · 文档比对</p>
+    <p class="lead">
+      这里收录我在合同智能化方向做过的<strong>可运行产物</strong>：Agent 工作台交互、招投标与合同交叉校验、签前文档比对，
+      以及配套的套件源码。所有内容都围绕同一条主线——把业务规则变成<strong>可执行任务</strong>、
+      让每条结论都带<span class="hl">可回溯到原文的证据</span>、并在交付前明确<span class="hl">什么必须被拒收</span>。
+    </p>
+    <div class="chips">
+      <span class="chip">Agent 工作台</span>
+      <span class="chip">原文证据层</span>
+      <span class="chip">layoutId 定位</span>
+      <span class="chip">非置换交叉校验</span>
+      <span class="chip">Word 原生修订</span>
+      <span class="chip">离线验证</span>
+    </div>
+  </section>
+
+  <div class="section-head" id="demos"><h2>场景演示</h2><span class="en">Interactive demos</span></div>
+  <div class="grid cols-3">
+    <article class="card">
+      <h3>合同智能化工作台 V5</h3>
+      <p>单点审查扩展为「起草—协作—审查—比对—签署归档」的工作台：任务、合同版本与意见处置由业务侧管理，Agent 只负责模型执行。</p>
+      <span class="meta">合成数据演示 · 任务状态 / 版本关系 / 意见处置</span>
+      <a class="more" href="demos/workbench-v5.html">打开演示 →</a>
+    </article>
+    <article class="card">
+      <h3>招投标文件 × 合同交叉校验</h3>
+      <p>核查招标要求与投标承诺是否最终落实到合同：以解析 layoutId + 文档索引建立原文证据层，输出含事实冲突与关系连线的报告。</p>
+      <span class="meta">合成文本样例 · 报告结构与证据定位</span>
+      <a class="more" href="demos/tender-cross-check.html">打开演示 →</a>
+    </article>
+    <article class="card">
+      <h3>独立文档比对（签前核对）</h3>
+      <p>按阅读顺序逐 layout 比对，支持字符一致性与语义一致性两种模式，输出真实 Word 修订稿与三屏联动视图。</p>
+      <span class="meta">合成文本样例 · 双模式 / 差异清单 / 修订输出</span>
+      <a class="more" href="demos/doc-compare.html">打开演示 →</a>
+    </article>
+  </div>
+
+  <div class="section-head" id="suites"><h2>套件代码</h2><span class="en">Suites</span></div>
+  <div class="grid cols-2">
+    <article class="card">
+      <h3>招投标与合同交叉校验套件</h3>
+      <p>5 个 Skill（对齐 / 事实 / 证据 / 审查 / 报告）+ 离线验证脚本与测试：原文证据层构建、长文档分段、HTML/PDF 报告渲染。</p>
+      <span class="meta">suites/tender-contract-verification · Python + Node 脚本</span>
+      <a class="more" href="suites/tender-contract-verification/README.md">查看 README →</a>
+    </article>
+    <article class="card">
+      <h3>文档比对套件</h3>
+      <p>7 个 Skill：文档解析、逐 layout 比对、语义一致性、三屏 HTML、Word 原生修订输出、报告生成与浏览器端校验。</p>
+      <span class="meta">suites/document-compare · Python 脚本 + 前端资源</span>
+      <a class="more" href="suites/document-compare/README.md">查看 README →</a>
+    </article>
+  </div>
+
+  <div class="section-head" id="docs"><h2>索引说明</h2><span class="en">Index</span></div>
+  <div class="grid cols-2">
+    <article class="card">
+      <h3>01 · 合同智能化工作台</h3>
+      <p>产品结构、角色与生命周期四阶段、任务与版本分离、受控回传与拒收判据。</p>
+      <a class="more" href="docs/01-contract-workbench.md">docs/01-contract-workbench.md →</a>
+    </article>
+    <article class="card">
+      <h3>02 · 招投标与合同交叉校验</h3>
+      <p>非置换式校验的判定口径、原文证据层设计、跨文档 layoutId 重排问题的处理。</p>
+      <a class="more" href="docs/02-tender-cross-check.md">docs/02-tender-cross-check.md →</a>
+    </article>
+    <article class="card">
+      <h3>03 · 独立文档比对与签前核对</h3>
+      <p>逐 layout 比对策略、字符/语义双模式的适用边界、Word 修订与三屏联动。</p>
+      <a class="more" href="docs/03-document-compare.md">docs/03-document-compare.md →</a>
+    </article>
+    <article class="card">
+      <h3>04 · 数据与脱敏说明</h3>
+      <p>本仓库所有演示数据均为合成或脱敏内容；说明哪些是本地验证、哪些仅为方案原型。</p>
+      <a class="more" href="docs/04-data-and-anonymization.md">docs/04-data-and-anonymization.md →</a>
+    </article>
+  </div>
+
+  <section class="sheet" id="scope" style="margin-top:24px">
+    <div class="kicker">Scope &amp; disclaimer</div>
+    <h2>数据与脱敏说明</h2>
+    <div class="grid cols-2">
+      <div>
+        <p class="lead"><strong>不含客户信息。</strong>本仓库不包含任何客户名称、客户合同原文、客户数据与生产环境凭据；演示页中的公司名、条款文本、金额与日期均为合成的示意数据。</p>
+      </div>
+      <div>
+        <p class="lead"><strong>区分成果状态。</strong>本地验证、离线核对与客户验收分别表述：演示页展示的是<strong>产品与工程形态</strong>，不代表客户生产环境的最终验收结论。</p>
+      </div>
+    </div>
+    <div class="note"><b>说明</b>　套件代码来自本地工程目录，已剔除缓存与运行产物；演示页为作品集重新制作的脱敏版本，交互与版式与本地工程版保持一致。</div>
+    <div class="footer">
+      <span>合同 AI 产品作品集 · 刘冉丰</span>
+      <span class="mark">PORTFOLIO</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

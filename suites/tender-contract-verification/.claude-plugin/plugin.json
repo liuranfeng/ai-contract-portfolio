@@ -1,0 +1,38 @@
+{
+  "name": "tender-contract-verification-plugin",
+  "displayName": "招投标合同核验",
+  "version": "1.2.1",
+  "description": "围绕合同是否不及预期，追踪招标要求及投标具体、增量承诺的合同落实，以文档索引和原生 layoutId 回溯证据。",
+  "author": {
+    "name": "自定义安装"
+  },
+  "license": "UNLICENSED",
+  "defaultEnabled": true,
+  "entry": "tender-contract-verification-plugin",
+  "agents": [
+    {
+      "name": "tender-contract-verification-plugin",
+      "displayName": "招投标合同核验",
+      "description": "多文档要求、响应与合同落实核验",
+      "mode": "primary",
+      "prompt": "./agents/tender-contract-verification.md",
+      "skills": [
+        "tender-review",
+        "tender-evidence",
+        "tender-facts",
+        "tender-align",
+        "tender-verify",
+        "tender-audit",
+        "tender-report"
+      ],
+      "mcpServers": [],
+      "connectors": []
+    }
+  ],
+  "skills": "./skills/",
+  "example_queries": [
+    "核对这组招标、投标和合同文件，找出没有落实的承诺",
+    "检查合同是否缩水了投标响应",
+    "根据文档索引和 layoutId 回看证据"
+  ]
+}

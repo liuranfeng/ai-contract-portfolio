@@ -1,0 +1,276 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectId": "synthetic-demo",
+  "snapshotId": "synthetic-expectation-v1.2.0",
+  "synthetic": true,
+  "documents": [
+    {
+      "documentIndex": 0,
+      "name": "模拟tender",
+      "role": "tender",
+      "parseRunId": "synthetic-run-1",
+      "sourceSha256": "307a55229c4e0e92418e6f050e8ddc5db839b02d8bd771faea2ba3b7ae50a30f",
+      "rawParseSha256": "d2a556243ee19570546f5ceabedb9692ff148ea9e32436f7de617ad099590d67",
+      "status": "complete",
+      "layouts": [
+        {
+          "layoutId": 12,
+          "text": "质保期不少于三年。",
+          "page": 0,
+          "bbox": null
+        }
+      ],
+      "pageNumbering": "zero-based"
+    },
+    {
+      "documentIndex": 1,
+      "name": "模拟bid",
+      "role": "bid",
+      "parseRunId": "synthetic-run-1",
+      "sourceSha256": "aca5812bf9d626f532a9bd18514278000a68d6b9524056c133f542b0672ae037",
+      "rawParseSha256": "43b62053a9f19effd80ee38df744a70fb60d07a90bf711b1cc72ee95ddd48548",
+      "status": "complete",
+      "layouts": [
+        {
+          "layoutId": 12,
+          "text": "市区项目免费质保五年。",
+          "page": 0,
+          "bbox": null
+        }
+      ],
+      "pageNumbering": "zero-based"
+    },
+    {
+      "documentIndex": 2,
+      "name": "模拟contract",
+      "role": "contract",
+      "parseRunId": "synthetic-run-1",
+      "sourceSha256": "baad79944c2a855f27032c668bb6fc4bd0ddd93d04a1aba69d3168a8d350c436",
+      "rawParseSha256": "2bf750f501ec4955d821673330d560c12a530f37a86933d52db1d38a23c83aa7",
+      "status": "complete",
+      "layouts": [
+        {
+          "layoutId": 12,
+          "text": "市区项目免费质保三年。",
+          "page": 0,
+          "bbox": null
+        }
+      ],
+      "pageNumbering": "zero-based"
+    }
+  ],
+  "missingMaterials": [],
+  "facts": [
+    {
+      "factId": "F0",
+      "fields": {
+        "action": "质保",
+        "durationYears": 3,
+        "scope": null
+      },
+      "fieldSources": {
+        "action": [
+          {
+            "documentIndex": 0,
+            "layoutId": 12
+          }
+        ],
+        "durationYears": [
+          {
+            "documentIndex": 0,
+            "layoutId": 12
+          }
+        ]
+      },
+      "primarySources": [
+        {
+          "documentIndex": 0,
+          "layoutId": 12
+        }
+      ],
+      "contextSources": [],
+      "quotes": [
+        {
+          "source": {
+            "documentIndex": 0,
+            "layoutId": 12
+          },
+          "text": "质保期不少于三年。"
+        }
+      ]
+    },
+    {
+      "factId": "F1",
+      "fields": {
+        "action": "质保",
+        "durationYears": 5,
+        "scope": "市区项目"
+      },
+      "fieldSources": {
+        "action": [
+          {
+            "documentIndex": 1,
+            "layoutId": 12
+          }
+        ],
+        "durationYears": [
+          {
+            "documentIndex": 1,
+            "layoutId": 12
+          }
+        ],
+        "scope": [
+          {
+            "documentIndex": 1,
+            "layoutId": 12
+          }
+        ]
+      },
+      "primarySources": [
+        {
+          "documentIndex": 1,
+          "layoutId": 12
+        }
+      ],
+      "contextSources": [],
+      "quotes": [
+        {
+          "source": {
+            "documentIndex": 1,
+            "layoutId": 12
+          },
+          "text": "市区项目免费质保五年。"
+        }
+      ]
+    },
+    {
+      "factId": "F2",
+      "fields": {
+        "action": "质保",
+        "durationYears": 3,
+        "scope": "市区项目"
+      },
+      "fieldSources": {
+        "action": [
+          {
+            "documentIndex": 2,
+            "layoutId": 12
+          }
+        ],
+        "durationYears": [
+          {
+            "documentIndex": 2,
+            "layoutId": 12
+          }
+        ],
+        "scope": [
+          {
+            "documentIndex": 2,
+            "layoutId": 12
+          }
+        ]
+      },
+      "primarySources": [
+        {
+          "documentIndex": 2,
+          "layoutId": 12
+        }
+      ],
+      "contextSources": [],
+      "quotes": [
+        {
+          "source": {
+            "documentIndex": 2,
+            "layoutId": 12
+          },
+          "text": "市区项目免费质保三年。"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "source": {
+        "documentIndex": 0,
+        "layoutId": 12
+      },
+      "status": "extracted",
+      "reason": "模拟句子逐项提取质保事实"
+    },
+    {
+      "source": {
+        "documentIndex": 1,
+        "layoutId": 12
+      },
+      "status": "extracted",
+      "reason": "模拟句子逐项提取质保事实"
+    },
+    {
+      "source": {
+        "documentIndex": 2,
+        "layoutId": 12
+      },
+      "status": "extracted",
+      "reason": "模拟句子逐项提取质保事实"
+    }
+  ],
+  "checks": [
+    {
+      "checkId": "CHK-1",
+      "title": "市区项目质保期限",
+      "factIds": [
+        "F0",
+        "F1",
+        "F2"
+      ],
+      "relations": [
+        {
+          "fromFactId": "F1",
+          "toFactId": "F2",
+          "type": "conflicts",
+          "basis": "同为市区项目免费质保，期限五年与三年不同。"
+        }
+      ],
+      "verification": {
+        "status": "partial",
+        "reason": "模拟材料显示市区免费质保五年与三年的差异，纳入和优先规则未核实，保留预期落实待确认。",
+        "comparedFields": [
+          "scope",
+          "action",
+          "durationYears"
+        ],
+        "reviewedSources": [
+          {
+            "documentIndex": 0,
+            "layoutId": 12
+          },
+          {
+            "documentIndex": 1,
+            "layoutId": 12
+          },
+          {
+            "documentIndex": 2,
+            "layoutId": 12
+          }
+        ],
+        "missingMaterials": [],
+        "reviewNote": "模拟复核保留市区限制，未生成全域五年建议。真实项目仍需核查全部附件。",
+        "suggestion": "就市区项目免费质保五年的投标承诺核对合同约定，并明确质保起算条件。"
+      },
+      "expectationComparison": {
+        "expectation": "模拟投标承诺市区项目免费质保五年。",
+        "contract": "模拟合同约定市区项目免费质保三年。",
+        "impact": "额外两年能否落实需结合纳入和优先条款核查。",
+        "result": "uncertain"
+      }
+    }
+  ],
+  "reportView": {
+    "mainCheckIds": [
+      "CHK-1"
+    ],
+    "title": "预期落实报告（模拟）",
+    "scope": "仅用于演示字段与渲染，不是客户结论。",
+    "summary": "不得把条件未核实的差异直接判为确定损失。"
+  }
+}

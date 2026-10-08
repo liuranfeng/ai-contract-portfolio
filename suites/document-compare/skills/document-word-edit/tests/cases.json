@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "kind": "synthetic-behavior-scenarios",
+  "cases": [
+    {
+      "name": "原件修订",
+      "prompt": "以原始DOCX为基准，将对齐结果中的3年改为5年。",
+      "expected": [
+        "保存新DOCX",
+        "真实w:ins/w:del",
+        "接受拒绝修订文本校验",
+        "原件hash不变"
+      ]
+    },
+    {
+      "name": "缺少DOCX原件",
+      "prompt": "只有PDF和解析结果，请生成修订。",
+      "expected": [
+        "不冒充原始Word",
+        "明确重建模式与版式限制",
+        "仍可输出HTML和报告"
+      ]
+    }
+  ]
+}

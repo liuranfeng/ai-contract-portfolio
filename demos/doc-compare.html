@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>独立文档比对（签前核对）· 合成文本样例</title>
+<link rel="stylesheet" href="../assets/portfolio.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="brand">独立文档比对 · 签前核对</span>
+    <nav>
+      <a href="../index.html">← 返回作品集</a>
+      <a href="workbench-v5.html">工作台</a>
+      <a href="tender-cross-check.html">交叉校验</a>
+    </nav>
+  </div>
+
+  <section class="sheet">
+    <div class="kicker">Document compare · Pre-signature check</div>
+    <h1>独立文档比对（签前核对）</h1>
+    <p class="headline">待签稿是否等于审定稿 —— 做成一键可复核的能力</p>
+    <p class="lead">
+      签约前最常见的风险是「待签稿与审批通过的版本不一致」。插件复用文档解析能力，
+      按<strong>阅读顺序逐 layout 比对</strong>，支持两种模式，并可直接输出<span class="hl">真实 Word 修订稿</span>，
+      让复核人按修订模式逐条确认。
+    </p>
+    <div class="chips">
+      <span class="chip on">合成文本</span>
+      <span class="chip">逐 layout 比对</span>
+      <span class="chip">字符一致性</span>
+      <span class="chip">语义一致性</span>
+      <span class="chip">Word 原生修订</span>
+    </div>
+    <div class="chips" style="margin-top:12px">
+      <span class="chip">比对模式：</span>
+      <span class="chip">字符一致性（严格）</span>
+      <span class="chip on">语义一致性（业务等义）</span>
+    </div>
+    <div class="note"><b>两种模式的边界</b>　字符一致性用于锁定措辞（金额、期限、引用编号）；语义一致性用于识别业务等义但表述不同的改写（例如「验收合格后 30 日内付款」与「以验收通过为付款前提，付款期限 30 日」）。</div>
+  </section>
+
+  <section class="sheet">
+    <h2>三屏联动</h2>
+    <div class="grid cols-3">
+      <div class="panel">
+        <h3>原件（审定稿）</h3>
+        <div class="doc">
+          <p><span class="ln">L-014</span>第六条 付款方式：合同签订后支付 <span class="hit">30%</span> 预付款。</p>
+          <p><span class="ln">L-015</span>验收合格后支付 <span class="hit">60%</span>，质保期满支付 <span class="hit">10%</span>。</p>
+          <p><span class="ln">L-016</span>卖方应在收到通知后 <span class="hit">7 日</span>内完成整改。</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>比对件（待签稿）</h3>
+        <div class="doc">
+          <p><span class="ln">L-014</span>第六条 付款方式：合同签订后支付 <span class="hit conflict">40%</span> 预付款。</p>
+          <p><span class="ln">L-015</span>验收合格后支付 <span class="hit conflict">50%</span>，质保期满支付 <span class="hit conflict">10%</span>。</p>
+          <p><span class="ln">L-016</span>卖方应在收到通知后 <span class="hit conflict">15 日</span>内完成整改。</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>差异清单 <span class="badge warn">6 处</span></h3>
+        <ul class="list">
+          <li><span class="t">金额变更 · L-014</span><span class="s">30% → 40%（付款结构改变）</span></li>
+          <li><span class="t">金额变更 · L-015</span><span class="s">60% → 50%</span></li>
+          <li><span class="t">期限变更 · L-016</span><span class="s">7 日 → 15 日</span></li>
+          <li><span class="t">措辞改写 · L-021</span><span class="s">语义等义，标记为低风险</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sheet">
+    <h2>修订输出与验收示意</h2>
+    <table class="plain">
+      <thead><tr><th>校验项</th><th>说明</th><th>结果</th></tr></thead>
+      <tbody>
+        <tr><td><strong>原文未被改写</strong></td><td>原件保持只读，修订仅施加于比对件副本</td><td><span class="badge ok">通过</span></td></tr>
+        <tr><td><strong>接受修订 = 目标稿</strong></td><td>接受全部修订后与目标版本逐段一致</td><td><span class="badge ok">通过</span></td></tr>
+        <tr><td><strong>拒绝修订 = 原件</strong></td><td>拒绝全部修订后与原件逐段一致</td><td><span class="badge ok">通过</span></td></tr>
+        <tr><td><strong>修订为 Word 原生格式</strong></td><td>可在 Word 中直接逐条接受 / 拒绝，非图片或文本标注</td><td><span class="badge ok">通过</span></td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>成果状态</b>　上述验收语义在<strong>本地工程样本</strong>上验证通过（样本为合成，非客户数据）；插件可独立调用，也可由业务系统编排调用。本页为合成文本的示意样例。</div>
+    <div class="footer">
+      <span>合同 AI 产品作品集 · 文档比对</span>
+      <span class="mark">DEMO / 03</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

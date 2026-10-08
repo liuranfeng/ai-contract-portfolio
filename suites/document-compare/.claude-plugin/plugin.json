@@ -1,0 +1,13 @@
+{
+  "name": "document-compare-plugin",
+  "displayName": "文档比对",
+  "version": "1.1.0",
+  "description": "复用文档解析，按阅读顺序逐layout对齐，分字符与语义校验，输出Word修订、三栏HTML及独立PDF/Word报告。",
+  "author": {"name":"自定义安装"},
+  "license":"UNLICENSED",
+  "defaultEnabled":true,
+  "entry":"document-compare-plugin",
+  "agents":[{"name":"document-compare-plugin","displayName":"文档比对","description":"原件与比对件的字符及语义一致性校验","mode":"primary","prompt":"./agents/document-compare.md","skills":["document-compare","contract-parsing","document-layout-input","document-semantic","document-word-edit","document-diff-html","document-diff-report"],"mcpServers":[],"connectors":[]}],
+  "skills":"./skills/",
+  "example_queries":["按字符检查这两份文档并生成Word修订和HTML","比较两个解析结果的语义是否一致","导出独立PDF和Word版本的文档比对报告"]
+}

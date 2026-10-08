@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>合同智能化工作台 V5 · 合成数据演示</title>
+<link rel="stylesheet" href="../assets/portfolio.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <span class="brand">合同智能化工作台 V5</span>
+    <nav>
+      <a href="../index.html">← 返回作品集</a>
+      <a href="tender-cross-check.html">交叉校验</a>
+      <a href="doc-compare.html">文档比对</a>
+    </nav>
+  </div>
+
+  <section class="sheet">
+    <div class="kicker">Agent workbench · Synthetic data</div>
+    <h1>合同智能化工作台 V5</h1>
+    <p class="headline">任务 · 合同版本 · 意见处置 · 受控交付</p>
+    <p class="lead">
+      工作台的职责边界是：<strong>业务侧管理任务、合同版本与意见处置</strong>，Agent 只负责模型执行与产出；
+      候选稿与正式版本分离，AI 产出的修改必须经过<span class="hl">人工确认</span>才能进入正式版本。
+    </p>
+    <div class="chips">
+      <span class="chip on">合成数据</span>
+      <span class="chip">任务状态可观测</span>
+      <span class="chip">候选稿 / 正式版分离</span>
+      <span class="chip">受控回传</span>
+      <span class="chip">拒收判据</span>
+    </div>
+  </section>
+
+  <div class="demo-grid">
+    <section class="panel">
+      <h3>任务 <span class="badge info">5 / 5</span></h3>
+      <ul class="list">
+        <li><span class="t">起草：基于范本生成初稿</span><span class="s">已完成 · 产出《设备采购合同（合成样例）》v1</span></li>
+        <li><span class="t">抽取：表单字段回填</span><span class="s">已完成 · 12 个字段，3 个待人工确认</span></li>
+        <li><span class="t">清单审查：卖方底线</span><span class="s">已完成 · P0 2 项 / P1 3 项</span></li>
+        <li><span class="t">协作建议：部门意见归集</span><span class="s">已完成 · 4 条意见待处置</span></li>
+        <li><span class="t">比对：签前核对</span><span class="s">已完成 · 差异 6 处</span></li>
+      </ul>
+      <div class="note"><b>状态可披露</b>　每个任务都暴露「进行中 / 已完成 / 已拒收」与中间产物，长耗时审查可被用户观测。</div>
+    </section>
+
+    <section class="panel">
+      <h3>合同版本与审查结果</h3>
+      <table class="plain">
+        <thead><tr><th>版本</th><th>来源</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td><strong>v1 起草稿</strong></td><td>范本起草（候选）</td><td><span class="badge warn">候选</span></td></tr>
+          <tr><td><strong>v2 协作清稿</strong></td><td>部门意见 + 负责人清稿</td><td><span class="badge info">待审定</span></td></tr>
+          <tr><td><strong>v3 审定稿</strong></td><td>审批通过，锁定正文</td><td><span class="badge ok">已锁定</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px">审查结果（卖方底线）</h3>
+      <table class="plain">
+        <thead><tr><th>等级</th><th>条款</th><th>结论</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge stop">P0</span></td><td>付款条件：验收后一次性付清</td><td>与底线「分期付款、保留质保金」偏离</td></tr>
+          <tr><td><span class="badge stop">P0</span></td><td>违约责任：无逾期违约金上限</td><td>缺失上限约定，建议按合同额比例封顶</td></tr>
+          <tr><td><span class="badge warn">P1</span></td><td>质量标准：未引用验收规范编号</td><td>建议补充可引用的技术规范条款</td></tr>
+          <tr><td><span class="badge warn">P1</span></td><td>交付地点：仅写「甲方指定地点」</td><td>建议明确到具体库区，避免履约争议</td></tr>
+        </tbody>
+      </table>
+
+      <div class="note"><b>拒收机制</b>　受控回传时校验正文哈希与版本号：一旦检测到正式版正文被篡改，回传被拒收并保持版本不变。演示中的「拒收」为本地验证结论。</div>
+    </section>
+
+    <section class="panel">
+      <h3>协作意见与清稿</h3>
+      <ul class="list">
+        <li><span class="t">法务 · 付款条件</span><span class="s">建议改为 3:6:1 分期并保留 10% 质保金　<span class="badge ok">已采纳</span></span></li>
+        <li><span class="t">财务 · 税率口径</span><span class="s">要求区分含税与不含税金额　<span class="badge ok">已采纳</span></span></li>
+        <li><span class="t">生产部门 · 交付批次</span><span class="s">建议分批交付并约定每批验期　<span class="badge warn">待确认</span></span></li>
+        <li><span class="t">采购 · 供应商资质</span><span class="s">现有资质证明已过期，需更新　<span class="badge stop">已拒绝</span></span></li>
+      </ul>
+      <div class="note"><b>清稿门槛</b>　收齐全部协作方意见后（每人至少 1 条意见或明确「通过」）才允许发起清稿，避免意见遗漏。</div>
+      <div class="note"><b>角色分工</b>　合同负责人 / 法务财务合规 / 领导审批人三类角色，按生命周期四阶段（初生—成长—成熟—死亡）各自持有不同操作权限。</div>
+    </section>
+  </div>
+
+  <section class="sheet" style="margin-top:20px">
+    <h2>这一版解决了什么</h2>
+    <div class="grid cols-3">
+      <div class="card"><h3>单点 → 全周期</h3><p>把「审一份合同」扩展为起草、协作、审查、比对、签署归档的连续工作台，任务与版本可追溯。</p></div>
+      <div class="card"><h3>模型 → 业务</h3><p>业务逻辑（版本、权限、意见处置）留在业务服务，Agent 只做模型执行，避免把流程规则塞进提示词。</p></div>
+      <div class="card"><h3>产出 → 可验收</h3><p>候选稿与正式版分离、受控回传 + 哈希校验，让 AI 产出成为可验收的交付物而不是一段文本。</p></div>
+    </div>
+    <div class="note"><b>演示说明</b>　本页数据为合成的示意数据，用于展示产品结构与交互；本地验证的具体结论见 <a href="../docs/01-contract-workbench.md">docs/01-contract-workbench.md</a>。</div>
+    <div class="footer">
+      <span>合同 AI 产品作品集 · 合同智能化工作台</span>
+      <span class="mark">DEMO / 01</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
